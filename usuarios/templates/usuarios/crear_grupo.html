@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}crear grupo{% endblock %}
+
+{% block content %}
+    <form action="{% url 'crear_grupo' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Nombre del grupo" required><br>
+        <button type="submit">Crear Grupo</button>
+    </form>
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+{% endblock %}

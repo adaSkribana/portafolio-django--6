@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}cear usuario{% endblock %}
+
+{% block content %}
+    <form action="{% url 'crear_usuario' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Nombre de usuario" required><br>
+        <input type="email" name="email" placeholder="Correo electrónico" required><br>
+        <input type="password" name="password" placeholder="Contraseña" required><br>
+        <button type="submit">Crear Usuario</button>
+    </form>
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+ {% endblock %}

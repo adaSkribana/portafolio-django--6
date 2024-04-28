@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}crear grupo{% endblock %}
+
+{% block content %}
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'lista_usuarios' %}">Lista de Usuarios</a></li>
+            <li><a href="{% url 'crear_usuario' %}">Crear Usuario</a></li>
+            <li><a href="{% url 'crear_grupo' %}">Crear Grupo</a></li>
+            <li><a href="{% url 'lista_grupos' %}">Lista de Grupos</a></li>
+        </ul>
+{% endblock %}

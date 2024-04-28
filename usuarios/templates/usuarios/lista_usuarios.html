@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Usuarios{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.username }} - 
+                <a href="{% url 'eliminar_usuario' usuario_id=usuario.id %}">Eliminar</a> | 
+                <a href="{% url 'modificar_usuario' usuario_id=usuario.id %}">Modificar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+{% endblock %}

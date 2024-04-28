@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Grupos{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for grupo in grupos %}
+            <li>
+                {{ grupo.name }} - 
+                <a href="{% url 'eliminar_grupo' grupo_id=grupo.id %}">Eliminar</a> | 
+                <a href="{% url 'editar_grupo' grupo_id=grupo.id %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+{% endblock %}

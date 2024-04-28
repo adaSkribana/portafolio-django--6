@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Modificar Grupo{% endblock %}
+
+{% block content %}
+    <form action="{% url 'modificar_grupo' group.id %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Nuevo nombre del grupo" value="{{ group.name }}" required><br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+{% endblock %}
